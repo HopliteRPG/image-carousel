@@ -4,9 +4,18 @@ export { allTogether };
 
 const carArr = [];
 
+//Declaring HTML Variables
 let imageContainer = document.querySelector(".image-container");
-//Photos
+const imageVar = document.createElement("img");
 
+function createImageHtml(parentDiv, imageVar, imageSrc, className) {
+  let cloneImageCreate = imageVar.cloneNode(true);
+  cloneImageCreate.src = imageSrc;
+  cloneImageCreate.classList.add(className);
+  parentDiv.appendChild(cloneImageCreate);
+}
+
+//Photos
 function createImageObj(photo, id, className) {
   const tempPhoto = document.createElement("img");
   tempPhoto.src = photo;
@@ -17,8 +26,7 @@ function createImageObj(photo, id, className) {
 
 function allTogether() {
   let gyroImage = createImageObj(gyro, 0, "photoTest");
-  carArr.push(gyroImage);
-  console.log(carArr);
-  imageContainer.appendChild(carArr[0].tempPhoto);
+
+  createImageHtml(imageContainer, imageVar, gyro, "photoTest");
   alert("ran");
 }
