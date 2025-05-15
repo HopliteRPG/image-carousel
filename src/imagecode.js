@@ -26,7 +26,8 @@ function createImageObj(photo) {
   let photoHTML = photo;
   const photoId = undefined;
   const photoClassName = "photoTest";
-  return { photoHTML, photoId, photoClassName };
+  const photoVisible = false;
+  return { photoHTML, photoId, photoClassName, photoVisible };
 }
 
 function createAndAppendImageObj(photo) {
