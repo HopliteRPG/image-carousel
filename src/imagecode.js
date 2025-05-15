@@ -2,6 +2,7 @@ import gyro from "./images/gyro.jpeg";
 import pizza from "./images/pizza.jpeg";
 export { allTogether };
 
+let idCounter = 0;
 const carArr = [];
 
 //Declaring HTML Variables
@@ -15,18 +16,35 @@ function createImageHtml(parentDiv, imageVar, imageSrc, className) {
   parentDiv.appendChild(cloneImageCreate);
 }
 
+function setAndIncreasePhotoIdCount(photo) {
+  photo.photoId = idCounter;
+  idCounter++;
+}
+
 //Photos
-function createImageObj(photo, id, className) {
-  const tempPhoto = document.createElement("img");
-  tempPhoto.src = photo;
-  const photoId = id;
-  const photoClassName = className;
-  return { tempPhoto, photoId, photoClassName };
+function createImageObj(photo) {
+  let photoHTML = photo;
+  const photoId = undefined;
+  const photoClassName = "photoTest";
+  return { photoHTML, photoId, photoClassName };
+}
+
+function createAndAppendImageObj(photo) {
+  let tempPhoto = createImageObj(photo);
+  setAndIncreasePhotoIdCount(tempPhoto);
+
+  createImageHtml(
+    imageContainer,
+    imageVar,
+    tempPhoto.photoHTML,
+    tempPhoto.photoClassName,
+  );
+
+  carArr.push(tempPhoto);
+  console.log(carArr);
 }
 
 function allTogether() {
-  let gyroImage = createImageObj(gyro, 0, "photoTest");
-
-  createImageHtml(imageContainer, imageVar, gyro, "photoTest");
+  createAndAppendImageObj(gyro);
   alert("ran");
 }
