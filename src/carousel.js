@@ -8,6 +8,7 @@ function dispayImages(array) {
 }
 
 function timeoutFunc(array) {
+  dispayImages(array);
   setInterval(() => {
     dispayImages(array);
   }, 2000);
