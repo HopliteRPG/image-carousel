@@ -2,9 +2,16 @@
 export { dispayImages, timeoutFunc };
 
 let displayImageCounter = 0;
+
 function dispayImages(array) {
-  console.log(array[displayImageCounter]);
-  displayImageCounter++;
+  if (displayImageCounter == array.length) {
+    displayImageCounter = 0;
+    console.log(array[displayImageCounter]);
+    displayImageCounter++;
+  } else {
+    console.log(array[displayImageCounter]);
+    displayImageCounter++;
+  }
 }
 
 function timeoutFunc(array) {
