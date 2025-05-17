@@ -1,6 +1,6 @@
 import gyro from "./images/gyro.jpeg";
 import pizza from "./images/pizza.jpeg";
-export { allTogether };
+export { allTogether, carArr };
 
 let idCounter = 0;
 const carArr = [];
@@ -47,5 +47,6 @@ function createAndAppendImageObj(photo) {
 
 function allTogether() {
   createAndAppendImageObj(gyro);
+  createAndAppendImageObj(pizza);
   alert("ran");
 }
