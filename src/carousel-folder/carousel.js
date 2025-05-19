@@ -1,4 +1,8 @@
 // import { carArr } from "./imageCode";
+import {
+  createImageHtml,
+  removeImageHtml,
+} from "../imagecode-folder/imagecodehtml";
 export { dispayImages, timeoutFunc, lowerCounter, raiseCounter };
 
 let displayImageCounter = 0;
@@ -7,9 +11,19 @@ function dispayImages(array) {
   if (displayImageCounter == array.length) {
     displayImageCounter = 0;
     console.log(array[displayImageCounter]);
+    removeImageHtml();
+    createImageHtml(
+      array[displayImageCounter].photoHTML,
+      array[displayImageCounter].photoClassName,
+    );
     displayImageCounter++;
   } else {
     console.log(array[displayImageCounter]);
+    removeImageHtml();
+    createImageHtml(
+      array[displayImageCounter].photoHTML,
+      array[displayImageCounter].photoClassName,
+    );
     displayImageCounter++;
   }
 }

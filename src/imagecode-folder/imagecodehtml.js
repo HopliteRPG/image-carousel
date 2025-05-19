@@ -1,10 +1,20 @@
-//Declaring HTML Variables
+export { createImageHtml, removeImageHtml };
 let imageContainer = document.querySelector(".image-container");
 const imageVar = document.createElement("img");
 
-function createImageHtml(parentDiv, imageVar, imageSrc, className) {
+function createImageHtml(imageSrc, className) {
   let cloneImageCreate = imageVar.cloneNode(true);
   cloneImageCreate.src = imageSrc;
   cloneImageCreate.classList.add(className);
-  parentDiv.appendChild(cloneImageCreate);
+  imageContainer.appendChild(cloneImageCreate);
+}
+
+function removeImageHtml() {
+  let currentPhoto = document.querySelector(".photoTest");
+  console.log(currentPhoto);
+  if (currentPhoto !== null) {
+    imageContainer.removeChild(currentPhoto);
+  } else {
+    return;
+  }
 }
