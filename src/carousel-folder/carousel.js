@@ -1,5 +1,5 @@
 // import { carArr } from "./imageCode";
-export { dispayImages, timeoutFunc, lowerCounter };
+export { dispayImages, timeoutFunc, lowerCounter, raiseCounter };
 
 let displayImageCounter = 0;
 
@@ -18,7 +18,7 @@ function timeoutFunc(array) {
   dispayImages(array);
   setInterval(() => {
     dispayImages(array);
-  }, 2000);
+  }, 5000);
 }
 
 //button code
@@ -34,5 +34,13 @@ function lowerCounter(array) {
       displayImageCounter - 1;
       dispayImages(array);
     }
+  });
+}
+
+function raiseCounter(array) {
+  rightButton.addEventListener("click", () => {
+    console.log(displayImageCounter);
+    // displayImageCounter++;
+    dispayImages(array);
   });
 }
