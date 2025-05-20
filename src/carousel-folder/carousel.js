@@ -7,6 +7,8 @@ export { dispayImages, timeoutFunc, lowerCounter, raiseCounter };
 
 let displayImageCounter = 0;
 
+function autoChange() {}
+
 function dispayImages(array) {
   if (displayImageCounter == array.length) {
     displayImageCounter = 0;
@@ -16,7 +18,13 @@ function dispayImages(array) {
       array[displayImageCounter].photoHTML,
       array[displayImageCounter].photoClassName,
     );
-    displayImageCounter++;
+  } else if (displayImageCounter == -1) {
+    displayImageCounter = array.length - 1;
+    removeImageHtml();
+    createImageHtml(
+      array[displayImageCounter].photoHTML,
+      array[displayImageCounter].photoClassName,
+    );
   } else {
     console.log(array[displayImageCounter]);
     removeImageHtml();
@@ -24,15 +32,14 @@ function dispayImages(array) {
       array[displayImageCounter].photoHTML,
       array[displayImageCounter].photoClassName,
     );
-    displayImageCounter++;
   }
 }
 
 function timeoutFunc(array) {
-  dispayImages(array);
-  setInterval(() => {
-    dispayImages(array);
-  }, 5000);
+  // dispayImages(array);
+  // setInterval(() => {
+  //   dispayImages(array);
+  // }, 5000);
 }
 
 //button code
@@ -41,20 +48,15 @@ let rightButton = document.querySelector(".right-btn");
 
 function lowerCounter(array) {
   leftButton.addEventListener("click", () => {
-    if (displayImageCounter == 0) {
-      displayImageCounter = array.length - 1;
-      dispayImages(array);
-    } else {
-      displayImageCounter - 1;
-      dispayImages(array);
-    }
+    displayImageCounter--;
+    dispayImages(array);
   });
 }
 
 function raiseCounter(array) {
   rightButton.addEventListener("click", () => {
     console.log(displayImageCounter);
-    // displayImageCounter++;
+    displayImageCounter++;
     dispayImages(array);
   });
 }
