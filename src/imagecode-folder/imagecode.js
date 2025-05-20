@@ -30,5 +30,4 @@ function photosForCarousel() {
   exportCreateImageObjAndPushArr(gyro);
   exportCreateImageObjAndPushArr(pizza);
   exportCreateImageObjAndPushArr(sushi);
-  alert("ran");
 }
