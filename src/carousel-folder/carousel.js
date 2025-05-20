@@ -36,10 +36,11 @@ function dispayImages(array) {
 }
 
 function timeoutFunc(array) {
-  // dispayImages(array);
-  // setInterval(() => {
-  //   dispayImages(array);
-  // }, 5000);
+  dispayImages(array);
+  setInterval(() => {
+    displayImageCounter++;
+    dispayImages(array);
+  }, 5000);
 }
 
 //button code
