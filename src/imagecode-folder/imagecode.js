@@ -1,5 +1,6 @@
 import gyro from "../images/gyro.jpeg";
 import pizza from "../images/pizza.jpeg";
+import sushi from "../images/sushi.jpg";
 export { exportCreateImageObjAndPushArr, photosForCarousel, carArr };
 
 let idCounter = 0;
@@ -28,5 +29,6 @@ function exportCreateImageObjAndPushArr(photo) {
 function photosForCarousel() {
   exportCreateImageObjAndPushArr(gyro);
   exportCreateImageObjAndPushArr(pizza);
+  exportCreateImageObjAndPushArr(sushi);
   alert("ran");
 }
