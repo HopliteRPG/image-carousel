@@ -19,6 +19,14 @@ body {
   flex-direction: row;
 }
 
+.bottom-caro-container {
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: lightgray;
+}
+
 .left-btn,
 .right-btn {
   width: 5%;
