@@ -1,6 +1,8 @@
+export { bottomCarouselButtonCreator };
+
 const divCreate = document.createElement("div");
 const pCreate = document.createElement("p");
-let bottomCaroContainer = document.querySelector(".bottomCaroDiv");
+let bottomCaroContainer = document.querySelector(".bottom-caro-container");
 
 function createDivSection(parentDiv, div, className) {
   let cloneDivCreate = div.cloneNode(true);
@@ -13,7 +15,10 @@ function createP(div, p, text, className) {
   let clonePCreate = p.cloneNode(true);
   clonePCreate.innerText = text;
   clonePCreate.classList.add(className);
+  console.log(div);
+  console.log(clonePCreate);
   div.appendChild(clonePCreate);
+  return { clonePCreate };
 }
 
 function bottomCarouselButtonCreator(image) {
@@ -22,5 +27,14 @@ function bottomCarouselButtonCreator(image) {
     divCreate,
     "bottomButtonDiv",
   );
-  let bottomButton = createP(bottomButtonDiv, pCreate, ".", "bottomButton");
+  let bottomButton = createP(
+    bottomButtonDiv.cloneDivCreate,
+    pCreate,
+    ".",
+    "bottomButton",
+  );
+
+  bottomButton.clonePCreate.addEventListener("click", function () {
+    alert(image.photoId);
+  });
 }
