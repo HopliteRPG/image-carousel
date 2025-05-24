@@ -1,3 +1,5 @@
+import { displayImageCounter } from "./carousel";
+
 export { bottomCarouselButtonCreator };
 
 const divCreate = document.createElement("div");
@@ -32,6 +34,8 @@ function bottomCarouselButtonCreator(image) {
   );
 
   bottomButton.cloneButtonCreate.addEventListener("click", function () {
+    displayImageCounter = image.photoId;
+    displayImageCounter(displayImageCounter);
     alert(image.photoId);
   });
 }

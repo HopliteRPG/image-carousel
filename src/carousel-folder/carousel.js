@@ -3,7 +3,13 @@ import {
   createImageHtml,
   removeImageHtml,
 } from "../imagecode-folder/imagecodehtml";
-export { dispayImages, timeoutFunc, lowerCounter, raiseCounter };
+export {
+  dispayImages,
+  displayImageCounter,
+  timeoutFunc,
+  lowerCounter,
+  raiseCounter,
+};
 
 let displayImageCounter = 0;
 
