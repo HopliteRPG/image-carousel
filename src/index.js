@@ -1,11 +1,12 @@
 import "./styles.css";
 import { carArr, photosForCarousel } from "./imagecode-folder/imagecode";
 import {
+  bottomCarouselButtonCreator,
   lowerCounter,
   raiseCounter,
   timeoutFunc,
 } from "./carousel-folder/carousel";
-import { bottomCarouselButtonCreator } from "./carousel-folder/carouselbottombuttons";
+bottomCarouselButtonCreator;
 photosForCarousel();
 timeoutFunc(carArr);
 lowerCounter(carArr);
