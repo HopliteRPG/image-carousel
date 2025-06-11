@@ -84,10 +84,11 @@ function createDivSection(parentDiv, div, className) {
   return { cloneDivCreate };
 }
 
-function createButton(div, button, buttonClass) {
+function createButton(div, button, buttonClass, buttonId) {
   let cloneButtonCreate = button.cloneNode(true);
   cloneButtonCreate.classList.add(buttonClass);
   div.appendChild(cloneButtonCreate);
+  cloneButtonCreate.setAttribute("id", buttonId);
   return { cloneButtonCreate };
 }
 
@@ -101,6 +102,7 @@ function bottomCarouselButtonCreator(image) {
     bottomButtonDiv.cloneDivCreate,
     buttonCreate,
     "bottomButton",
+    image.photoId,
   );
 
   bottomButton.cloneButtonCreate.addEventListener("click", function () {
