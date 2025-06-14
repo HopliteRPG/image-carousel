@@ -25,6 +25,7 @@ function dispayImages(array) {
       array[displayImageCounter].photoHTML,
       array[displayImageCounter].photoClassName,
     );
+    clearAndFillButton(displayImageCounter);
   } else if (displayImageCounter == -1) {
     displayImageCounter = array.length - 1;
     removeImageHtml();
@@ -32,6 +33,7 @@ function dispayImages(array) {
       array[displayImageCounter].photoHTML,
       array[displayImageCounter].photoClassName,
     );
+    clearAndFillButton(displayImageCounter);
   } else {
     console.log(array[displayImageCounter]);
     removeImageHtml();
@@ -39,7 +41,17 @@ function dispayImages(array) {
       array[displayImageCounter].photoHTML,
       array[displayImageCounter].photoClassName,
     );
+    clearAndFillButton(displayImageCounter);
   }
+}
+
+function clearAndFillButton(numberId) {
+  let buttons = document.querySelectorAll(".bottomButton");
+  buttons.forEach((button) => {
+    button.style.backgroundColor = "pink";
+  });
+  let selectedButton = buttons[numberId];
+  selectedButton.style.backgroundColor = "black";
 }
 
 function timeoutFunc(array) {

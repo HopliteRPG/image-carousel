@@ -6,11 +6,11 @@ import {
   raiseCounter,
   timeoutFunc,
 } from "./carousel-folder/carousel";
-bottomCarouselButtonCreator;
+// bottomCarouselButtonCreator();
 photosForCarousel();
-timeoutFunc(carArr);
-lowerCounter(carArr);
-raiseCounter(carArr);
 carArr.forEach((image) => {
   bottomCarouselButtonCreator(image);
 });
+timeoutFunc(carArr);
+lowerCounter(carArr);
+raiseCounter(carArr);
